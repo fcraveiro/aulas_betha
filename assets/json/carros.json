@@ -1,0 +1,18 @@
+[
+    {"brand": "Toyota", "year": 2015},
+    {"brand": "Honda", "year": 2018},
+    {"brand": "Ford", "year": 2013},
+    {"brand": "Chevrolet", "year": 2017},
+    {"brand": "BMW", "year": 2016},
+    {"brand": "Mercedes", "year": 2019},
+    {"brand": "Audi", "year": 2020},
+    {"brand": "Volkswagen", "year": 2014},
+    {"brand": "Nissan", "year": 2011},
+    {"brand": "Mazda", "year": 2012},
+    {"brand": "Subaru", "year": 2021},
+    {"brand": "Kia", "year": 2010},
+    {"brand": "Hyundai", "year": 2009},
+    {"brand": "Tesla", "year": 2022},
+    {"brand": "Volvo", "year": 2015}
+  ]
+  
