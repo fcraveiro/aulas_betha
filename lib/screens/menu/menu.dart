@@ -28,7 +28,7 @@ class _MenuState extends State<Menu> {
               onPressed: () {
                 readUsers();
               },
-              child: const Text('Pagina 1'),
+              child: const Text('Usuários'),
             ),
           ],
         ),
