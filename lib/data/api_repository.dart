@@ -3,7 +3,7 @@ import 'package:aulas_betha/domain/entities/comments.dart';
 import 'package:aulas_betha/domain/entities/user.dart';
 import 'package:dio/dio.dart';
 
-class UserRepository {
+class ApiRepository {
   final Dio _dio = Dio(); // Cria uma instância de Dio
 
   Future<List<User>> getUsers() async {

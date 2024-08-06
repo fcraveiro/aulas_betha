@@ -1,4 +1,4 @@
-import 'package:aulas_betha/screens/menu/menu.dart';
+import 'package:aulas_betha/menu.dart';
 import 'package:aulas_betha/domain/themes/theme_dark.dart';
 import 'package:aulas_betha/domain/themes/theme_light.dart';
 import 'package:flutter/material.dart';

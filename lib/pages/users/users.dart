@@ -1,7 +1,5 @@
-import 'dart:developer';
-
+import 'package:aulas_betha/data/api_repository.dart';
 import 'package:aulas_betha/domain/entities/user.dart';
-import 'package:aulas_betha/_data/user_repository/user_repository.dart';
 import 'package:flutter/material.dart';
 
 class ReadUsers extends StatefulWidget {
@@ -12,14 +10,12 @@ class ReadUsers extends StatefulWidget {
 }
 
 class _ReadUsersState extends State<ReadUsers> {
-  late UserRepository userRepository = UserRepository();
+  late ApiRepository userRepository = ApiRepository();
   List<User> users = [];
 
-  ler() async {
-    userRepository = UserRepository();
+  readUsers() async {
+    userRepository = ApiRepository();
     users = await userRepository.getUsers();
-    log(' name ${users[1].name}');
-    log(' name ${users[1].username}');
     setState(() {
       users = users;
     });
@@ -40,7 +36,7 @@ class _ReadUsersState extends State<ReadUsers> {
             ),
             ElevatedButton(
               onPressed: () {
-                ler();
+                readUsers();
               },
               child: const Text('Clique aqui'),
             ),
