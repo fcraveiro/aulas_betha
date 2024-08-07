@@ -1,3 +1,4 @@
+import 'package:aulas_betha/pages/acuracy/acuracy.dart';
 import 'package:aulas_betha/pages/cards/card_one/card_one.dart';
 import 'package:aulas_betha/pages/cards/card_two/card_two.dart';
 import 'package:aulas_betha/pages/users/users.dart';
@@ -26,6 +27,11 @@ class _MenuState extends State<Menu> {
         context, MaterialPageRoute(builder: (context) => const CardTwo()));
   }
 
+  acuracy() {
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => const Acuracy()));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -45,6 +51,11 @@ class _MenuState extends State<Menu> {
             ElevatedButton(
               onPressed: () => cardTwo(),
               child: const Text('Cartas 2'),
+            ),
+            const SizedBox(height: 10),
+            ElevatedButton(
+              onPressed: () => acuracy(),
+              child: const Text('Acurácia'),
             ),
             const SizedBox(height: 10),
             ElevatedButton(
