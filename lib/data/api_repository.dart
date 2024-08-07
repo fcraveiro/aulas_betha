@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:aulas_betha/domain/entities/albums.dart';
 import 'package:aulas_betha/domain/entities/comments.dart';
 import 'package:aulas_betha/domain/entities/user.dart';
@@ -13,6 +15,7 @@ class ApiRepository {
       if (response.statusCode == 200) {
         List<User> users =
             (response.data as List).map((json) => User.fromJson(json)).toList();
+        log(users.toString());
         return users;
       } else {
         throw Exception('Failed to load users');
@@ -30,6 +33,7 @@ class ApiRepository {
         List<Comments> comments = (response.data as List)
             .map((json) => Comments.fromJson(json))
             .toList();
+
         return comments;
       } else {
         throw Exception('Failed to load users');

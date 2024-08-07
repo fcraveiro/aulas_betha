@@ -17,6 +17,16 @@ class _MenuState extends State<Menu> {
         context, MaterialPageRoute(builder: (context) => const ReadUsers()));
   }
 
+  readComments() {
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => const ReadUsers()));
+  }
+
+  readAlbums() {
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => const ReadUsers()));
+  }
+
   cardOne() {
     Navigator.push(
         context, MaterialPageRoute(builder: (context) => const CardOne()));
@@ -61,6 +71,16 @@ class _MenuState extends State<Menu> {
             ElevatedButton(
               onPressed: () => readUsers(),
               child: const Text('Usuários'),
+            ),
+            const SizedBox(height: 10),
+            ElevatedButton(
+              onPressed: () => readComments(),
+              child: const Text('Comentários'),
+            ),
+            const SizedBox(height: 10),
+            ElevatedButton(
+              onPressed: () => readAlbums(),
+              child: const Text('Albuns'),
             ),
           ],
         ),

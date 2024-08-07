@@ -53,6 +53,10 @@ class _ReadUsersState extends State<ReadUsers> {
                       users[index].username,
                       style: const TextStyle(color: Colors.black, fontSize: 28),
                     ),
+                    trailing: Text(
+                      users[index].id.toString(),
+                      style: const TextStyle(color: Colors.black, fontSize: 28),
+                    ),
                   );
                 },
               ),
