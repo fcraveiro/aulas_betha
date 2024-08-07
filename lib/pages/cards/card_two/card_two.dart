@@ -9,62 +9,58 @@ class CardTwo extends StatefulWidget {
 
 class _CardTwoState extends State<CardTwo> {
   List<String> cards = List.generate(10, (index) => 'Card ${index + 1}');
+  double dragPosition = 0;
+  bool isDragging = false;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Card Deck')),
-      body: Stack(
-        children: cards.asMap().entries.map((entry) {
-          int idx = entry.key;
-          String card = entry.value;
-          return Positioned(
-            top: idx * 2.0,
-            child: Draggable<String>(
-              feedback: CardWidget(card),
-              childWhenDragging: Container(),
-              onDragEnd: (details) {
-                if (details.offset.dx <
-                    -MediaQuery.of(context).size.width / 2) {
-                  setState(() {
-                    cards.removeAt(0);
-                    cards.add(card);
-                  });
-                }
-              },
-              child: CardWidget(card),
-            ),
-          );
-        }).toList(),
+      appBar: AppBar(title: const Text('Card Deck - Left Swipe Only')),
+      body: GestureDetector(
+        onHorizontalDragStart: (details) {
+          setState(() {
+            isDragging = true;
+          });
+        },
+        onHorizontalDragUpdate: (details) {
+          setState(() {
+            // Permitir apenas movimento para a esquerda
+            if (details.delta.dx < 0) {
+              dragPosition += details.delta.dx;
+              // Limitar o arrasto para não ir além da borda esquerda
+              dragPosition =
+                  dragPosition.clamp(-MediaQuery.of(context).size.width, 0);
+            }
+          });
+        },
+        onHorizontalDragEnd: (details) {
+          setState(() {
+            isDragging = false;
+            if (dragPosition.abs() > MediaQuery.of(context).size.width / 2) {
+              String topCard = cards.removeAt(0);
+              cards.add(topCard);
+            }
+            dragPosition = 0;
+          });
+        },
+        child: Stack(
+          children: [
+            for (int i = cards.length - 1; i >= 0; i--)
+              Positioned(
+                top: 20.0 * i,
+                left: i == 0 ? dragPosition : 0,
+                child: Card(
+                  child: Container(
+                    width: 300,
+                    height: 200,
+                    alignment: Alignment.center,
+                    child: Text(cards[i], style: const TextStyle(fontSize: 24)),
+                  ),
+                ),
+              ),
+          ],
+        ),
       ),
-    );
-  }
-}
-
-class CardWidget extends StatelessWidget {
-  final String cardText;
-
-  const CardWidget(this.cardText, {super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: 300,
-      height: 200,
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(10),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.grey.withOpacity(0.5),
-            spreadRadius: 2,
-            blurRadius: 5,
-            offset: const Offset(0, 3),
-          ),
-        ],
-      ),
-      child:
-          Center(child: Text(cardText, style: const TextStyle(fontSize: 24))),
     );
   }
 }
