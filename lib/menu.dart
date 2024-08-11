@@ -1,3 +1,4 @@
+import 'package:aulas_betha/pages/Albums/album.dart';
 import 'package:aulas_betha/pages/acuracy_kenny/acuracy.dart';
 import 'package:aulas_betha/pages/cards/card_one/card_one.dart';
 import 'package:aulas_betha/pages/cards/card_two/card_two.dart';
@@ -24,7 +25,7 @@ class _MenuState extends State<Menu> {
 
   readAlbums() {
     Navigator.push(
-        context, MaterialPageRoute(builder: (context) => const ReadUsers()));
+        context, MaterialPageRoute(builder: (context) => const ReadAlbums()));
   }
 
   cardOne() {
