@@ -1,6 +1,7 @@
 import 'package:aulas_betha/pages/acuracy_kenny/acuracy.dart';
 import 'package:aulas_betha/pages/cards/card_one/card_one.dart';
 import 'package:aulas_betha/pages/cards/card_two/card_two.dart';
+import 'package:aulas_betha/pages/comments/comments.dart';
 import 'package:aulas_betha/pages/users/users.dart';
 import 'package:flutter/material.dart';
 
@@ -32,6 +33,11 @@ class _MenuState extends State<Menu> {
         context, MaterialPageRoute(builder: (context) => const Acuracy()));
   }
 
+  readComments() {
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => const ReadComments()));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -61,6 +67,11 @@ class _MenuState extends State<Menu> {
             ElevatedButton(
               onPressed: () => readUsers(),
               child: const Text('Usuários'),
+            ),
+            const SizedBox(height: 10),
+            ElevatedButton(
+              onPressed: () => readComments(),
+              child: const Text('Comentários'),
             ),
           ],
         ),
