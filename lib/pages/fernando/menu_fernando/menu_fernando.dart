@@ -1,6 +1,7 @@
 import 'package:aulas_betha/pages/fernando/acuracy/acuracy.dart';
 import 'package:aulas_betha/pages/fernando/cards/card_one/card_one.dart';
 import 'package:aulas_betha/pages/fernando/cards/card_two/card_two.dart';
+import 'package:aulas_betha/pages/fernando/change_notifier/change_notifier.dart';
 import 'package:aulas_betha/pages/fernando/overlay/overlay.dart';
 import 'package:flutter/material.dart';
 
@@ -32,6 +33,11 @@ class _MenuFernandoState extends State<MenuFernando> {
         context, MaterialPageRoute(builder: (context) => const OverlayTest()));
   }
 
+  appPage() {
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => const AppPage()));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -61,6 +67,11 @@ class _MenuFernandoState extends State<MenuFernando> {
             ElevatedButton(
               onPressed: () => overlayTest(),
               child: const Text('Overlay'),
+            ),
+            const SizedBox(height: 10),
+            ElevatedButton(
+              onPressed: () => appPage(),
+              child: const Text('AppPage'),
             ),
           ],
         ),
