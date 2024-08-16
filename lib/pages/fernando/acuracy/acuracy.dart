@@ -1,4 +1,4 @@
-import 'package:aulas_betha/pages/acuracy_kenny/acurary_final.dart';
+import 'package:aulas_betha/pages/fernando/acuracy/acurary_final.dart';
 import 'package:flutter/material.dart';
 
 class Acuracy extends StatefulWidget {

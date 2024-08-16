@@ -1,4 +1,4 @@
-import 'package:aulas_betha/pages/cards/card_one/card_widget.dart';
+import 'package:aulas_betha/pages/fernando/cards/card_one/card_widget.dart';
 import 'package:flutter/material.dart';
 
 class CardOne extends StatefulWidget {

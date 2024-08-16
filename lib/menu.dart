@@ -1,6 +1,7 @@
-import 'package:aulas_betha/pages/acuracy_kenny/acuracy.dart';
-import 'package:aulas_betha/pages/cards/card_one/card_one.dart';
-import 'package:aulas_betha/pages/cards/card_two/card_two.dart';
+import 'package:aulas_betha/pages/fernando/acuracy/acuracy.dart';
+import 'package:aulas_betha/pages/fernando/cards/card_one/card_one.dart';
+import 'package:aulas_betha/pages/fernando/cards/card_two/card_two.dart';
+import 'package:aulas_betha/pages/fernando/menu_fernando/menu_fernando.dart';
 import 'package:aulas_betha/pages/users/users.dart';
 import 'package:flutter/material.dart';
 
@@ -42,6 +43,11 @@ class _MenuState extends State<Menu> {
         context, MaterialPageRoute(builder: (context) => const Acuracy()));
   }
 
+  menuFernando() {
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => const MenuFernando()));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -53,19 +59,24 @@ class _MenuState extends State<Menu> {
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             const SizedBox(height: 80),
-            ElevatedButton(
-              onPressed: () => cardOne(),
-              child: const Text('Cartas 1'),
-            ),
+            // ElevatedButton(
+            //   onPressed: () => cardOne(),
+            //   child: const Text('Cartas 1'),
+            // ),
+            // const SizedBox(height: 10),
+            // ElevatedButton(
+            //   onPressed: () => cardTwo(),
+            //   child: const Text('Cartas 2'),
+            // ),
+            // const SizedBox(height: 10),
+            // ElevatedButton(
+            //   onPressed: () => acuracy(),
+            //   child: const Text('Acurácia'),
+            // ),
             const SizedBox(height: 10),
             ElevatedButton(
-              onPressed: () => cardTwo(),
-              child: const Text('Cartas 2'),
-            ),
-            const SizedBox(height: 10),
-            ElevatedButton(
-              onPressed: () => acuracy(),
-              child: const Text('Acurácia'),
+              onPressed: () => menuFernando(),
+              child: const Text('Fernando'),
             ),
             const SizedBox(height: 10),
             ElevatedButton(
