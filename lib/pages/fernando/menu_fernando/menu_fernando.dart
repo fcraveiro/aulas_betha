@@ -1,8 +1,11 @@
 import 'package:aulas_betha/pages/fernando/acuracy/acuracy.dart';
 import 'package:aulas_betha/pages/fernando/cards/card_one/card_one.dart';
 import 'package:aulas_betha/pages/fernando/cards/card_two/card_two.dart';
-import 'package:aulas_betha/pages/fernando/change_notifier/change_notifier.dart';
-import 'package:aulas_betha/pages/fernando/overlay/overlay.dart';
+import 'package:aulas_betha/pages/fernando/change_notifier_test/change_notifier_test.dart';
+import 'package:aulas_betha/pages/fernando/notfier_plug_test/notfier_plug_test.dart';
+import 'package:aulas_betha/pages/fernando/overlay_portal/overlay_portal.dart';
+import 'package:aulas_betha/pages/fernando/responsive_page/responsive_page.dart';
+import 'package:aulas_betha/pages/fernando/responsive_page_two/responsive_page_two.dart';
 import 'package:flutter/material.dart';
 
 class MenuFernando extends StatefulWidget {
@@ -36,6 +39,21 @@ class _MenuFernandoState extends State<MenuFernando> {
   appPage() {
     Navigator.push(
         context, MaterialPageRoute(builder: (context) => const AppPage()));
+  }
+
+  testNotifier() {
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => const TestNotifier()));
+  }
+
+  responsivePage() {
+    Navigator.push(context,
+        MaterialPageRoute(builder: (context) => const ResponsivePage()));
+  }
+
+  responsivePageTwo() {
+    Navigator.push(context,
+        MaterialPageRoute(builder: (context) => const ResponsivePageTwo()));
   }
 
   @override
@@ -72,6 +90,21 @@ class _MenuFernandoState extends State<MenuFernando> {
             ElevatedButton(
               onPressed: () => appPage(),
               child: const Text('AppPage'),
+            ),
+            const SizedBox(height: 10),
+            ElevatedButton(
+              onPressed: () => testNotifier(),
+              child: const Text('Teste Notfier'),
+            ),
+            const SizedBox(height: 10),
+            ElevatedButton(
+              onPressed: () => responsivePage(),
+              child: const Text('Pagina Responsiva'),
+            ),
+            const SizedBox(height: 10),
+            ElevatedButton(
+              onPressed: () => responsivePageTwo(),
+              child: const Text('Pagina Responsiva 2'),
             ),
           ],
         ),
